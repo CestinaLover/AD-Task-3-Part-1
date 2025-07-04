@@ -1,19 +1,24 @@
 <?php
+require_once __DIR__ . '/../utils/envSetter.util.php';
 
-$host = "host.docker.internal"; 
-$port = "5112";
-$username = "user";
-$password = "password";
-$dbname = "mydatabase";
+// Check if PostgreSQL extension is loaded
+if (!extension_loaded('pgsql')) {
+    echo "❌ PostgreSQL extension not loaded.\n";
+    return;
+}
 
-$conn_string = "host=$host port=$port dbname=$dbname user=$username password=$password";
+$host = $_ENV['PG_HOST'];
+$port = $_ENV['PG_PORT'];
+$db   = $_ENV['PG_DB'];
+$user = $_ENV['PG_USER'];
+$pass = $_ENV['PG_PASS'];
 
-$dbconn = pg_connect($conn_string);
+$connStr = "host=$host port=$port dbname=$db user=$user password=$pass";
+$conn = @pg_connect($connStr);
 
-if (!$dbconn) {
-    echo "❌ Connection Failed: ", pg_last_error() . "  <br>";
-    exit();
+if ($conn) {
+    echo "✅ PostgreSQL Connection successful.\n";
+    pg_close($conn);
 } else {
-    echo "✔️ PostgreSQL Connection  <br>";
-    pg_close($dbconn);
+    echo "❌ PostgreSQL Connection Failed\n";
 }
