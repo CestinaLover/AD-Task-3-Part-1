@@ -1,10 +1,19 @@
 {
-    "name": "your-username-here/project-name-here",
+    "name": "AD-Task-3-Part-1/php-pages",
     "type": "project",
+    "autoload": {
+        "psr-4": {
+            "AD-Task-3-Part-1\\PhpPages\\": "src/"
+        }
+    },
     "authors": [
         {
-            "name": "your-username-here",
-            "email": "your-email-here@gmail.com"
+            "name": "CestinaLover",
+            "email": "202310413@fit.edu.ph"
+        },
+        {
+            "name": "Aldous Damaso",
+            "email": "axledamaso@gmail.com"
         }
     ],
     "scripts": {
