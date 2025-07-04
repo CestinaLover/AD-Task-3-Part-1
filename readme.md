@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/CestinaLover/">
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+    <img src="./assets/img/jemoepeps.png" alt="Nyebe" width="130" height="100">
   </a>
   <h3 align="center">AD-Task-3-Part-1</h3>
 </div>
